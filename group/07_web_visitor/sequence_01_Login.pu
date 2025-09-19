@@ -1,0 +1,45 @@
+@startuml Web訪問者システム-ログインシーケンス図
+hide footbox
+skinparam boundaryBackgroundColor #D5E8D4
+skinparam controlBackgroundColor  #F8CECC
+skinparam entityBackgroundColor   #DAE8FC
+
+actor ユーザー as A
+boundary ログイン画面 as B1
+control ユーザ認証 as C1
+entity 訪問者 as E
+boundary Welcomeページ as B2
+boundary 新規登録画面 as B3
+boundary ログイン失敗画面 as B4
+
+' ユーザー入力
+A -> B1: 2: ユーザID・パスワード入力()
+activate B1
+
+' 認証処理開始
+B1 -> C1: 2.1: 起動()
+activate C1212
+
+' ユーザ認証
+C1 -> E: 2.1.1: ユーザ認証()
+activate E
+E --> C1
+deactivate E
+
+' 分岐ごとの結果を個別に表現
+C1 -> B2: 2.1.2: 既存ユーザ表示()
+activate B2
+deactivate B2
+
+C1 -> B3: 2.1.3: 新規ユーザ表示()
+activate B3
+deactivate B3
+
+C1 -> B4: 2.1.4: 入力エラー表示()
+activate B4
+deactivate B4
+
+deactivate C1
+deactivate B1
+
+@enduml

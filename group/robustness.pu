@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ロバストネス図" id="robustness1">
+    <mxGraphModel dx="1080" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Actor -->
+        <mxCell id="actor" value="&#x4e8b;&#x52d9;&#x6240;&#xff08;&#x8077;&#x54e1;&#xff09;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Boundary -->
+        <mxCell id="boundary" value="&lt;&lt;boundary&gt;&gt;&lt;br&gt;貸出履歴画面" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="150" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Control -->
+        <mxCell id="control" value="&lt;&lt;control&gt;&gt;&lt;br&gt;履歴管理コントローラ" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="150" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Entity: 貸出履歴 -->
+        <mxCell id="entity1" value="&lt;&lt;entity&gt;&gt;&lt;br&gt;貸出履歴" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="100" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Entity: 利用者 -->
+        <mxCell id="entity2" value="&lt;&lt;entity&gt;&gt;&lt;br&gt;利用者" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="180" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Entity: 資料（図書） -->
+        <mxCell id="entity3" value="&lt;&lt;entity&gt;&gt;&lt;br&gt;資料（図書）" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="260" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="edge1" value="閲覧要求" edge="1" parent="1" source="actor" target="boundary">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="boundary" target="control">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge3" value="履歴取得" edge="1" parent="1" source="control" target="entity1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge4" value="利用者情報取得" edge="1" parent="1" source="control" target="entity2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge5" value="資料情報取得" edge="1" parent="1" source="control" target="entity3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
